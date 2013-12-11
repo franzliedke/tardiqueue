@@ -1,0 +1,23 @@
+{
+    "name": "franzl/tardiqueue",
+    "description": "A cheap, but effective queue implementation for Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Franz Liedke",
+            "email": "franz@develophp.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/container": "4.0.x",
+        "illuminate/queue": "4.0.x",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Franzl\\Tardiqueue": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
