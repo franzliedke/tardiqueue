@@ -9,7 +9,13 @@ class TardiqueueServiceProvider extends ServiceProvider {
 	 *
 	 * @return void
 	 */
-	public function register() {}
+	public function register()
+	{
+		$this->app['tardiqueue'] = $this->app->share(function()
+		{
+			return new Processor;
+		});
+	}
 
 	/**
 	 * Bootstrap the application events.
@@ -18,19 +24,18 @@ class TardiqueueServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->app['queue']->addConnector('delayed', function()
+		$app = $this->app;
+
+		$app['queue']->addConnector('delayed', function() use ($app)
 		{
-			return new DelayedConnector;
+			return new DelayedConnector($app['tardiqueue']);
 		});
 
 		// If Tardiqueue is enabled, make sure all jobs will be executed upon shutdown
-		if ($this->app['config']['queue.default'] == 'delayed')
+		$app->shutdown(function($app)
 		{
-			$this->app->shutdown(function($app)
-			{
-				$app['queue']->fireAll();
-			});
-		}
+			$app['tardiqueue']->process();
+		});
 	}
 
 }
