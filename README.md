@@ -4,7 +4,7 @@ A cheap, but effective queue implementation for Laravel. Easy to install like th
 
 This is achieved by registering jobs as shutdown functions, which means that they will only be executed once the application has sent its response to the client
 
-*NOTE:* This driver does not support the `delete()` and `release()` methods for jobs. They can be called, but will not have any effect. Jobs will be deleted automatically after being run, and releasing them will not run them again.
+**NOTE:** This driver does not support the `delete()` and `release()` methods for jobs. They can be called, but will not have any effect. Jobs will be deleted automatically after being run, and releasing them will not run them again.
 
 ## Installation with Composer
 
