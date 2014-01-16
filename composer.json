@@ -1,6 +1,7 @@
 {
     "name": "franzl/tardiqueue",
     "description": "A cheap, but effective queue implementation for Laravel",
+    "keywords": ["queue", "laravel"],
     "license": "MIT",
     "authors": [
         {
