@@ -24,16 +24,8 @@ class TardiqueueServiceProvider extends ServiceProvider {
 			{
 				return new DelayedConnector($app['tardiqueue']);
 			});
-		})
-	}
-
-	/**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
-	public function boot()
-	{
+		});
+		
 		// If Tardiqueue is enabled, make sure all jobs will be executed upon shutdown
 		$this->app->shutdown(function($app)
 		{
