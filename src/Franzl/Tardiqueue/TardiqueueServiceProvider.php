@@ -27,7 +27,7 @@ class TardiqueueServiceProvider extends ServiceProvider {
 		});
 		
 		// If Tardiqueue is enabled, make sure all jobs will be executed upon shutdown
-		$this->app->shutdown(function($app)
+		$app->shutdown(function($app)
 		{
 			$app['tardiqueue']->process();
 		});
