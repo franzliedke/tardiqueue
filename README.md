@@ -12,7 +12,7 @@ This is achieved by registering jobs as shutdown functions, which means that the
 
 Add this line to the `require` section of your `composer.json`:
 
-    "franzl/tardiqueue": "1.0.x"
+    "franzl/tardiqueue": "1.1.x"
 
 Alternately, you can use the Composer command-line tool by running this command:
 
