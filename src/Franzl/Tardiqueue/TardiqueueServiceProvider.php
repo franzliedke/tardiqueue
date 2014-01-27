@@ -5,6 +5,13 @@ use Illuminate\Support\ServiceProvider;
 class TardiqueueServiceProvider extends ServiceProvider {
 
 	/**
+	 * Indicates if loading of the provider is deferred.
+	 *
+	 * @var bool
+	 */
+	protected $defer = true;
+
+	/**
 	 * Register the service provider.
 	 *
 	 * @return void
@@ -31,6 +38,26 @@ class TardiqueueServiceProvider extends ServiceProvider {
 		{
 			$app['tardiqueue']->process();
 		});
+	}
+
+	/**
+	 * Get the events that trigger this service provider to register.
+	 *
+	 * @return array
+	 */
+	public function when()
+	{
+		return array('Illuminate\Queue\QueueServiceProvider');
+	}
+
+	/**
+	 * Get the services provided by the provider.
+	 *
+	 * @return array
+	 */
+	public function provides()
+	{
+		return array('tardiqueue');
 	}
 
 }
