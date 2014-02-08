@@ -32,9 +32,10 @@ class DelayedQueue extends Queue implements QueueInterface {
 	 *
 	 * @param  string  $payload
 	 * @param  string  $queue
+	 * @param  array   $options
 	 * @return mixed
 	 */
-	public function pushRaw($payload, $queue = null) {}
+	public function pushRaw($payload, $queue = null, array $options = array()) {}
 
 	/**
 	 * Push a new job onto the queue after a delay.

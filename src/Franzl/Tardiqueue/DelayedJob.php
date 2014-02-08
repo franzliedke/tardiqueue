@@ -83,6 +83,17 @@ class DelayedJob extends Job {
 		return 1;
 	}
 
+
+	/**
+	 * Get the raw body string for the job.
+	 *
+	 * @return string
+	 */
+	 public function getRawBody() {
+	 	//
+	 }
+
+
 	/**
 	 * Get the job identifier.
 	 *
