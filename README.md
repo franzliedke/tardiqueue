@@ -16,7 +16,7 @@ Add this line to the `require` section of your `composer.json`:
 
 Alternately, you can use the Composer command-line tool by running this command:
 
-    composer require franzl/tardiqueue
+    composer require franzl/tardiqueue:1.1.x
 
 Next, run `composer install` to actually install the package.
 
